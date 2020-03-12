@@ -17,7 +17,7 @@ public class StudentDAO {
 	
         	//StudentDAO.udateData();
 		     
-		        StudentDAO.dleateRecod();
+		        StudentDAO.deleteRecod();
 		
 	}
 
@@ -122,7 +122,7 @@ public class StudentDAO {
 	
 }
 	
-	public static void dleateRecod()
+	public static void deleteRecod()
 	{
 		Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
