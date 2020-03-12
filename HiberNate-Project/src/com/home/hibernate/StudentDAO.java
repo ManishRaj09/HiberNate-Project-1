@@ -12,9 +12,12 @@ public class StudentDAO {
 	public static void main(String[] args) {
 
 	//	StudentDAO.fetchData();
-	//StudentDAO.CreateData();
 	
-		StudentDAO.udateData();
+		//StudentDAO.CreateData();
+	
+        	//StudentDAO.udateData();
+		     
+		        StudentDAO.dleateRecod();
 		
 	}
 
@@ -118,6 +121,31 @@ public class StudentDAO {
 		
 	
 }
+	
+	public static void dleateRecod()
+	{
+		Configuration cfg=new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		
+		SessionFactory sessfact=cfg.buildSessionFactory();
+		
+		Session sess=sessfact.openSession();
+		sess.beginTransaction();
+		
+		StudentDTO stdUp=new StudentDTO();
+	
+		stdUp.setsId(101);
+		
+		Transaction tx=sess.beginTransaction();
+		sess.delete(stdUp);
+		tx.commit();
+		
+		
+		System.out.println("1 row id deleted from table ");
+		
+		sess.close();
+		sessfact.close();
+	}
 
 
 }
